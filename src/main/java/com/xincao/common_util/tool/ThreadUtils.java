@@ -1,4 +1,4 @@
-package com.xincao.common_util;
+package com.xincao.common_util.tool;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;

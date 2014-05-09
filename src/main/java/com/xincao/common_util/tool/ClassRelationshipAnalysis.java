@@ -1,11 +1,10 @@
-package com.xincao.common_util;
+package com.xincao.common_util.tool;
 
 /**
  * This class contains utilities that are used when we are working with classes
  *
- * @author SoulKeeper
  */
-public class ClassUtils {
+public class ClassRelationshipAnalysis {
 
     /**
      * Return true if class a is either equivalent to class b, or if class a is

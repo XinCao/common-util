@@ -1,9 +1,12 @@
-package com.xincao.common_util;
+package com.xincao.common_util.tool;
+
+import com.xincao.common_util.constant.CommonlRegularExpressions;
+import java.util.regex.Pattern;
 
 /**
  * @author KID, -Nemesiss-
  */
-public class NetworkUtils {
+public class Validate {
 
     /**
      * check if IP address match pattern
@@ -40,8 +43,32 @@ public class NetworkUtils {
         }
         return true;
     }
-    
-    public static void main(String ...args) {
+
+    public static boolean isMailStr(String mailStr) {
+        return Pattern.compile(CommonlRegularExpressions.mail).matcher(mailStr).matches();
+    }
+
+    /**
+     * 点分十进制IP
+     *
+     * @param ipStr
+     * @return
+     */
+    public static boolean isIpStr(String ipStr) {
+        return Pattern.compile(CommonlRegularExpressions.ip).matcher(ipStr).matches();
+    }
+
+    /**
+     * 一般字符串校验（字母， 数字，下划线构成）
+     *
+     * @param commonStr
+     * @return
+     */
+    public static boolean isCommonStr(String commonStr) {
+        return Pattern.compile(CommonlRegularExpressions.common).matcher(commonStr).matches();
+    }
+
+    public static void main(String... args) {
         boolean result = checkIPMatching("192.168.1.0-127", "192.168.1.1");
         System.out.println(result);
     }

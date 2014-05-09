@@ -1,4 +1,4 @@
-package com.xincao.common_util;
+package com.xincao.common_util.tool;
 
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -10,9 +10,9 @@ import org.slf4j.LoggerFactory;
  * @author lord_rex This class is for get/log system informations.
  *
  */
-public class AEInfos {
+public class Infos {
 
-    private static final Logger log = LoggerFactory.getLogger(AEInfos.class);
+    private static final Logger log = LoggerFactory.getLogger(Infos.class);
 
     public static String[] getMemoryInfo() {
         double max = Runtime.getRuntime().maxMemory() / 1024; // maxMemory is the upper limit the jvm can use

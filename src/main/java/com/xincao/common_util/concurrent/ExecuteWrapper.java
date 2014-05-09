@@ -1,18 +1,19 @@
 package com.xincao.common_util.concurrent;
 
+import com.xincao.common_util.tool.RunnableStatsManager;
 import java.util.concurrent.TimeUnit;
 import javolution.text.TextBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * 当线程执行花费时间过长时，进行通知
+ * 当线程执行花费时间过长时，进行通知（使用RunnableStatsManager进行记录）
  * 
  * @author caoxin
  */
 public class ExecuteWrapper implements Runnable {
 
-    private static final Logger log = LoggerFactory.getLogger(ExecuteWrapper.class);
+    private static final Logger logger = LoggerFactory.getLogger(ExecuteWrapper.class);
     private final Runnable runnable;
 
     public ExecuteWrapper(Runnable runnable) {
@@ -37,7 +38,7 @@ public class ExecuteWrapper implements Runnable {
         try {
             runnable.run();
         } catch (RuntimeException e) {
-            log.warn("Exception in a Runnable execution:", e);
+            logger.warn("Exception in a Runnable execution:", e);
         } finally {
             long runtimeInNanosec = System.nanoTime() - begin;
             Class<? extends Runnable> clazz = runnable.getClass();
@@ -49,7 +50,7 @@ public class ExecuteWrapper implements Runnable {
                 tb.append(" - execution time: ");
                 tb.append(runtimeInMillisec);
                 tb.append("msec");
-                log.warn(tb.toString());
+                logger.warn(tb.toString());
                 TextBuilder.recycle(tb);
             }
         }
@@ -58,19 +59,20 @@ public class ExecuteWrapper implements Runnable {
     private static class TestRunabled implements Runnable {
     
         private final int sleepTime = 30 * 1000;
-        
+
         @Override
         public void run() {
             try {
                 Thread.sleep(sleepTime);
-                 System.out.println("hello world!");
+                logger.info("hello world!");
             } catch (InterruptedException ex) {
+                logger.error(ex.getMessage());
             }
         }
     }
     
     public static void main(String ...args) {
         ExecuteWrapper executeWrapper = new ExecuteWrapper(new TestRunabled());
-        executeWrapper.run();
+        new Thread(executeWrapper, "executeWrapper").start();
     }
 }

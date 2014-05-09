@@ -1,19 +1,14 @@
-package com.xincao.common_util;
+package com.xincao.common_util.collections;
 
 import java.lang.reflect.Array;
 import java.util.Collection;
 import java.util.List;
 import java.util.RandomAccess;
-
 import javolution.util.FastCollection;
 import javolution.util.FastCollection.Record;
 
-/**
- * @author NB4L1
- * @param <E>
- */
 @SuppressWarnings("unchecked")
-public abstract class AEFastCollection<E> implements Collection<E> {
+public abstract class IFastCollection<E> implements Collection<E> {
 
     public abstract Record head();
 
@@ -90,8 +85,8 @@ public abstract class AEFastCollection<E> implements Collection<E> {
             return addAll((FastCollection<? extends E>) c);
         }
 
-        if (c instanceof AEFastCollection<?>) {
-            return addAll((AEFastCollection<? extends E>) c);
+        if (c instanceof IFastCollection<?>) {
+            return addAll((IFastCollection<? extends E>) c);
         }
 
         boolean modified = false;
@@ -105,7 +100,7 @@ public abstract class AEFastCollection<E> implements Collection<E> {
         return modified;
     }
 
-    private boolean addAll(AEFastCollection<? extends E> c) {
+    private boolean addAll(IFastCollection<? extends E> c) {
         boolean modified = false;
 
         for (Record r = c.head(), end = c.tail(); (r = r.getNext()) != end;) {
@@ -164,8 +159,8 @@ public abstract class AEFastCollection<E> implements Collection<E> {
             return containsAll((FastCollection<?>) c);
         }
 
-        if (c instanceof AEFastCollection<?>) {
-            return containsAll((AEFastCollection<?>) c);
+        if (c instanceof IFastCollection<?>) {
+            return containsAll((IFastCollection<?>) c);
         }
 
         for (Object obj : c) {
@@ -177,7 +172,7 @@ public abstract class AEFastCollection<E> implements Collection<E> {
         return true;
     }
 
-    private boolean containsAll(AEFastCollection<?> c) {
+    private boolean containsAll(IFastCollection<?> c) {
         for (Record r = c.head(), end = c.tail(); (r = r.getNext()) != end;) {
             if (!contains(c.valueOf(r))) {
                 return false;

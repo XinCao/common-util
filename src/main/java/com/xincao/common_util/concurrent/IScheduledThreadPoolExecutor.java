@@ -1,4 +1,4 @@
-package com.xincao.common_util;
+package com.xincao.common_util.concurrent;
 
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
@@ -15,7 +15,7 @@ import java.util.concurrent.ThreadFactory;
  * @author -Nemesiss-
  *
  */
-public class ScheduledThreadPoolExecutorAE extends ScheduledThreadPoolExecutor {
+public class IScheduledThreadPoolExecutor extends ScheduledThreadPoolExecutor {
 
     /**
      * Creates a new ScheduledThreadPoolExecutor with the given initial
@@ -28,7 +28,7 @@ public class ScheduledThreadPoolExecutorAE extends ScheduledThreadPoolExecutor {
      * @throws IllegalArgumentException if <tt>corePoolSize &lt; 0</tt>
      * @throws NullPointerException if handler is null
      */
-    public ScheduledThreadPoolExecutorAE(int corePoolSize, RejectedExecutionHandler handler) {
+    public IScheduledThreadPoolExecutor(int corePoolSize, RejectedExecutionHandler handler) {
         super(corePoolSize, handler);
     }
 
@@ -45,7 +45,7 @@ public class ScheduledThreadPoolExecutorAE extends ScheduledThreadPoolExecutor {
      * @throws IllegalArgumentException if <tt>corePoolSize &lt; 0</tt>
      * @throws NullPointerException if threadFactory or handler is null
      */
-    public ScheduledThreadPoolExecutorAE(int corePoolSize, ThreadFactory threadFactory, RejectedExecutionHandler handler) {
+    public IScheduledThreadPoolExecutor(int corePoolSize, ThreadFactory threadFactory, RejectedExecutionHandler handler) {
         super(corePoolSize, threadFactory, handler);
     }
 
@@ -60,7 +60,7 @@ public class ScheduledThreadPoolExecutorAE extends ScheduledThreadPoolExecutor {
      * @throws IllegalArgumentException if <tt>corePoolSize &lt; 0</tt>
      * @throws NullPointerException if threadFactory is null
      */
-    public ScheduledThreadPoolExecutorAE(int corePoolSize, ThreadFactory threadFactory) {
+    public IScheduledThreadPoolExecutor(int corePoolSize, ThreadFactory threadFactory) {
         super(corePoolSize, threadFactory);
     }
 
@@ -71,13 +71,10 @@ public class ScheduledThreadPoolExecutorAE extends ScheduledThreadPoolExecutor {
      * they are idle
      * @throws IllegalArgumentException if <tt>corePoolSize &lt; 0</tt>
      */
-    public ScheduledThreadPoolExecutorAE(int corePoolSize) {
+    public IScheduledThreadPoolExecutor(int corePoolSize) {
         super(corePoolSize);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected void afterExecute(Runnable r, Throwable t) {
         super.afterExecute(r, t);

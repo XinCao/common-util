@@ -1,4 +1,4 @@
-package com.xincao.common_util;
+package com.xincao.common_util.math;
 
 import java.util.Arrays;
 

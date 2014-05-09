@@ -1,5 +1,6 @@
-package com.xincao.common_util;
+package com.xincao.common_util.collections;
 
+import com.xincao.common_util.collections.IFastCollection;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -10,20 +11,20 @@ import javolution.util.FastCollection.Record;
  * @author NB4L1
  */
 @SuppressWarnings("unchecked")
-public class AEFastSet<E> extends AEFastCollection<E> implements Set<E> {
+public class IFastSet<E> extends IFastCollection<E> implements Set<E> {
 
     private static final Object NULL = new Object();
     private final FastMap<E, Object> map;
 
-    public AEFastSet() {
+    public IFastSet() {
         map = new FastMap<E, Object>();
     }
 
-    public AEFastSet(int capacity) {
+    public IFastSet(int capacity) {
         map = new FastMap<E, Object>(capacity);
     }
 
-    public AEFastSet(Set<? extends E> elements) {
+    public IFastSet(Set<? extends E> elements) {
         map = new FastMap<E, Object>(elements.size());
 
         addAll(elements);

@@ -1,4 +1,4 @@
-package com.xincao.common_util;
+package com.xincao.common_util.tool;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -8,11 +8,11 @@ import java.util.Properties;
 import org.apache.commons.io.FileUtils;
 
 /**
- * This class is designed to simplify routine job with properties
+ * 读取.propertys文件
  *
  * @author SoulKeeper
  */
-public class PropertiesUtils {
+public class PropertiesReader {
 
     /**
      * Loads properties by given file

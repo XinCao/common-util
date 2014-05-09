@@ -12,33 +12,6 @@ import java.util.Locale;
 import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
-/**
- * This class allows us to read ResourceBundles with custom encodings, so we
- * don't have write \\uxxxx symbols and use utilities like native2ascii to
- * convert files.
- * <p/>
- * <br>
- *
- * Usage: For instance we want to load resource bundle "test" from current
- * deirectory and use english locale. If locale not found, we will use default
- * file (and ignore default locale).
- *
- * <pre>
- * URLClassLoader loader = new URLClassLoader(new URL[] { new File(&quot;.&quot;).toURI().toURL() });
- *
- * ResourceBundle rb = ResourceBundle.getBundle(&quot;test&quot;, Locale.ENGLISH, loader, new ResourceBundleControl(&quot;UTF-8&quot;));
- *
- * // English locale not found, use default
- * if(!rb.getLocale().equals(Locale.ENGLISH))
- * {
- * 	rb = ResourceBundle.getBundle(&quot;test&quot;, Locale.ROOT, loader, new ResourceBundleControl(&quot;UTF-8&quot;));
- * }
- *
- * System.out.println(rb.getString(&quot;test&quot;));
- * </pre>
- *
- * @author SoulKeeper
- */
 public class ResourceBundleControl extends ResourceBundle.Control {
 
     /**

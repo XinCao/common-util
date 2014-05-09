@@ -1,7 +1,7 @@
-package com.xincao.common_util;
+package com.xincao.common_util.constant;
 
 /**
- * Class that contains exit codes for server
+ * 服务器结束状态
  *
  * @author SoulKeeper
  */

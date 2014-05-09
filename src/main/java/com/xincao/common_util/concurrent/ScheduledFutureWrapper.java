@@ -7,7 +7,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 /**
- * @author NB4L1
+ * 一个延迟的，结果可接受的操作，可将其取消
+ *
  */
 public final class ScheduledFutureWrapper implements ScheduledFuture<Object> {
 
