@@ -1,4 +1,4 @@
-package com.xincao.common_util.concurrent;
+package com.xincao.common.util.concurrent;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,4 +1,4 @@
-package com.xincao.common_util.i18n;
+package com.xincao.common.util.i18n;
 
 import java.io.IOException;
 import java.io.InputStream;

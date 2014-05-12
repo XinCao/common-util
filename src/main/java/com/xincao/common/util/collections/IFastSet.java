@@ -1,6 +1,6 @@
-package com.xincao.common_util.collections;
+package com.xincao.common.util.collections;
 
-import com.xincao.common_util.collections.IFastCollection;
+import com.xincao.common.util.collections.IFastCollection;
 import java.util.Iterator;
 import java.util.Set;
 

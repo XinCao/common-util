@@ -1,4 +1,4 @@
-package com.xincao.common_util.concurrent;
+package com.xincao.common.util.concurrent;
 
 import java.util.concurrent.Delayed;
 import java.util.concurrent.ExecutionException;

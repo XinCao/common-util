@@ -1,4 +1,4 @@
-package com.xincao.common_util.tool;
+package com.xincao.common.util.tool;
 
 /**
  * This class contains utilities that are used when we are working with classes

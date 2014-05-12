@@ -1,6 +1,6 @@
-package com.xincao.common_util.concurrent;
+package com.xincao.common.util.concurrent;
 
-import com.xincao.common_util.tool.RunnableStatsManager;
+import com.xincao.common.util.tool.RunnableStatsManager;
 import java.util.concurrent.TimeUnit;
 import javolution.text.TextBuilder;
 import org.slf4j.Logger;

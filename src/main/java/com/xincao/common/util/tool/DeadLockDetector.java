@@ -1,6 +1,6 @@
-package com.xincao.common_util.tool;
+package com.xincao.common.util.tool;
 
-import com.xincao.common_util.constant.ExitCode;
+import com.xincao.common.util.constant.ExitCode;
 import java.lang.management.LockInfo;
 import java.lang.management.ManagementFactory;
 import java.lang.management.MonitorInfo;

@@ -1,4 +1,4 @@
-package com.xincao.common_util.tool;
+package com.xincao.common.util.tool;
 
 import java.io.PrintStream;
 import java.text.NumberFormat;

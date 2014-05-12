@@ -1,4 +1,4 @@
-package com.xincao.common_util.constant;
+package com.xincao.common.util.constant;
 
 /**
  *

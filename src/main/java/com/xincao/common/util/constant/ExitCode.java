@@ -1,4 +1,4 @@
-package com.xincao.common_util.constant;
+package com.xincao.common.util.constant;
 
 /**
  * 服务器结束状态

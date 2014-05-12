@@ -1,6 +1,6 @@
-package com.xincao.common_util.tool;
+package com.xincao.common.util.tool;
 
-import com.xincao.common_util.constant.CommonlRegularExpressions;
+import com.xincao.common.util.constant.CommonlRegularExpressions;
 import java.util.regex.Pattern;
 
 /**

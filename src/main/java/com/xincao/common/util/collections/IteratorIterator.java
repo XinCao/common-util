@@ -1,4 +1,4 @@
-package com.xincao.common_util.collections;
+package com.xincao.common.util.collections;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
