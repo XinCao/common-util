@@ -26,10 +26,11 @@ public class Validate {
         }
         String[] mask = pattern.split("\\.");
         String[] ip_address = address.split("\\.");
-        for (int i = 0; i < mask.length; i++) {
+        for (int i = 0, len = mask.length; i < len; i++) {
             if (mask[i].equals("*") || mask[i].equals(ip_address[i])) {
                 continue;
-            } else if (mask[i].contains("-")) {
+            }
+            if (mask[i].contains("-")) {
                 String[] pairS = mask[i].split("-");
                 byte min = Byte.parseByte(pairS[0]);
                 byte max = Byte.parseByte(pairS[1]);
